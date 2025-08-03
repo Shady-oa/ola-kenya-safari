@@ -2,40 +2,68 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
+/* Ola Tours Kenya Design System - Safari & Adventure Theme
+All colors MUST be HSL for consistency across light/dark modes.
 */
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;500;600&family=Poppins:wght@500;600&display=swap');
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
-
+    /* Core Brand Colors - Inspired by Kenya's landscapes */
+    --primary: 195 57% 31%; /* Safari Blue #176B87 - Ocean & trust */
+    --primary-foreground: 0 0% 98%;
+    --primary-glow: 195 57% 45%; /* Lighter blue for gradients */
+    
+    --accent: 24 100% 53%; /* Safari Orange #FF7F11 - Sunset energy */
+    --accent-foreground: 0 0% 98%;
+    --accent-light: 24 100% 65%; /* Lighter orange for hover states */
+    
+    /* Background & Surface Colors */
+    --background: 0 0% 97.6%; /* Clean minimal #F9F9F9 */
+    --foreground: 0 0% 11.8%; /* High contrast text #1E1E1E */
+    
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
-
+    --card-foreground: 0 0% 11.8%;
+    
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover-foreground: 0 0% 11.8%;
+    
+    /* Secondary & Muted Colors */
+    --secondary: 36 39% 88%; /* Warm sand tone */
+    --secondary-foreground: 0 0% 11.8%;
+    
+    --muted: 36 33% 94%; /* Lighter sand */
+    --muted-foreground: 0 0% 45%;
+    
+    /* Feedback Colors */
+    --success: 142 71% 45%; /* Booking confirmation #3BB273 */
+    --success-foreground: 0 0% 98%;
+    
+    --destructive: 0 65% 51%; /* Warning actions #D9534F */
+    --destructive-foreground: 0 0% 98%;
+    
+    /* Border & Input Styling */
+    --border: 36 33% 87%;
+    --input: 36 33% 87%;
+    --ring: 195 57% 31%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
-
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
-
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
-
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
-
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
-
+    /* Safari Gradients - Capturing Kenya's natural beauty */
+    --gradient-safari: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-glow)));
+    --gradient-sunset: linear-gradient(135deg, hsl(var(--accent)), hsl(var(--accent-light)));
+    --gradient-landscape: linear-gradient(180deg, hsl(var(--primary-glow)) 0%, hsl(var(--accent)) 100%);
+    --gradient-hero: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--accent)) 100%);
+    
+    /* Safari Shadows - Warm and inviting */
+    --shadow-safari: 0 10px 30px -10px hsl(var(--primary) / 0.3);
+    --shadow-sunset: 0 8px 25px -8px hsl(var(--accent) / 0.4);
+    --shadow-card: 0 4px 20px -4px hsl(var(--primary) / 0.15);
+    --shadow-glow: 0 0 40px hsl(var(--accent) / 0.3);
+    
+    /* Smooth Transitions */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-fast: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    
     --radius: 0.5rem;
 
     --sidebar-background: 0 0% 98%;
@@ -100,6 +128,109 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-sans;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-weight: 700;
+  }
+}
+
+@layer components {
+  /* Safari Button Variants */
+  .btn-safari {
+    @apply bg-gradient-to-r from-primary to-primary-glow text-primary-foreground font-medium px-6 py-3 rounded-lg shadow-safari transition-all duration-300 hover:shadow-sunset hover:scale-105;
+  }
+  
+  .btn-sunset {
+    @apply bg-gradient-to-r from-accent to-accent-light text-accent-foreground font-medium px-6 py-3 rounded-lg shadow-sunset transition-all duration-300 hover:shadow-glow hover:scale-105;
+  }
+  
+  .btn-ghost-safari {
+    @apply text-primary border border-primary/20 bg-transparent hover:bg-primary/5 px-6 py-3 rounded-lg transition-all duration-300;
+  }
+
+  /* Safari Card Styles */
+  .card-safari {
+    @apply bg-card rounded-xl shadow-card border border-border/50 overflow-hidden transition-all duration-300 hover:shadow-sunset hover:-translate-y-1;
+  }
+
+  /* Safari Text Animations */
+  .safari-link {
+    @apply relative inline-block after:content-[''] after:absolute after:w-full after:scale-x-0 after:h-0.5 after:bottom-0 after:left-0 after:bg-accent after:origin-bottom-right after:transition-transform after:duration-300 hover:after:scale-x-100 hover:after:origin-bottom-left;
+  }
+
+  /* Hero Animations */
+  .fade-in-up {
+    @apply animate-[fadeInUp_0.8s_ease-out_forwards];
+  }
+  
+  .scale-in {
+    @apply animate-[scaleIn_0.6s_ease-out_forwards];
+  }
+
+  /* Tour Package Grid */
+  .tour-grid {
+    @apply grid gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-3;
+  }
+
+  /* Testimonial Cards */
+  .testimonial-card {
+    @apply bg-gradient-to-br from-card to-secondary/30 p-6 rounded-xl shadow-card border border-border/30;
+  }
+}
+
+@layer utilities {
+  /* Custom Animations */
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes scaleIn {
+    from {
+      opacity: 0;
+      transform: scale(0.95);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  @keyframes pulse-safari {
+    0%, 100% {
+      box-shadow: 0 0 0 0 hsl(var(--accent) / 0.7);
+    }
+    70% {
+      box-shadow: 0 0 0 10px hsl(var(--accent) / 0);
+    }
+  }
+
+  .animate-pulse-safari {
+    animation: pulse-safari 2s infinite;
+  }
+
+  /* Gradient Text */
+  .text-gradient-safari {
+    background: var(--gradient-safari);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  .text-gradient-sunset {
+    background: var(--gradient-sunset);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
   }
 }
