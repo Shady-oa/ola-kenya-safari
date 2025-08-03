@@ -31,7 +31,7 @@ const Footer = () => {
                 <span className="text-white font-bold text-xl">O</span>
               </div>
               <div>
-                <h3 className="font-playfair text-2xl font-bold">Ola Tours</h3>
+                <h3 className="font-playfair text-2xl font-bold">Ola Tour and Travels</h3>
                 <p className="text-sm text-primary-foreground/80">Kenya Safari Experts</p>
               </div>
             </div>
@@ -55,17 +55,25 @@ const Footer = () => {
 
             {/* Social Media */}
             <div className="flex gap-4">
-              <Button variant="outline" size="icon" className="bg-transparent border-primary-foreground/30 hover:bg-accent hover:border-accent">
-                <Facebook className="h-4 w-4" />
+              <Button variant="outline" size="icon" className="bg-transparent border-primary-foreground/30 hover:bg-accent hover:border-accent" asChild>
+                <a href="https://olatours.co.ke" target="_blank" rel="noopener noreferrer">
+                  <Facebook className="h-4 w-4" />
+                </a>
               </Button>
-              <Button variant="outline" size="icon" className="bg-transparent border-primary-foreground/30 hover:bg-accent hover:border-accent">
-                <Instagram className="h-4 w-4" />
+              <Button variant="outline" size="icon" className="bg-transparent border-primary-foreground/30 hover:bg-accent hover:border-accent" asChild>
+                <a href="https://olatours.co.ke" target="_blank" rel="noopener noreferrer">
+                  <Instagram className="h-4 w-4" />
+                </a>
               </Button>
-              <Button variant="outline" size="icon" className="bg-transparent border-primary-foreground/30 hover:bg-accent hover:border-accent">
-                <Twitter className="h-4 w-4" />
+              <Button variant="outline" size="icon" className="bg-transparent border-primary-foreground/30 hover:bg-accent hover:border-accent" asChild>
+                <a href="https://olatours.co.ke" target="_blank" rel="noopener noreferrer">
+                  <Twitter className="h-4 w-4" />
+                </a>
               </Button>
-              <Button variant="outline" size="icon" className="bg-transparent border-primary-foreground/30 hover:bg-accent hover:border-accent">
-                <MessageCircle className="h-4 w-4" />
+              <Button variant="outline" size="icon" className="bg-transparent border-primary-foreground/30 hover:bg-accent hover:border-accent" asChild>
+                <a href="https://wa.me/254759190097?text=Hello%20Ola%20Tour%20and%20Travels%2C%20I%20am%20interested%20in%20booking%20a%20tour." target="_blank" rel="noopener noreferrer">
+                  <MessageCircle className="h-4 w-4" />
+                </a>
               </Button>
             </div>
           </div>
@@ -101,9 +109,8 @@ const Footer = () => {
                 <MapPin className="h-5 w-5 text-accent mt-1 flex-shrink-0" />
                 <div>
                   <p className="text-primary-foreground/90">
-                    Safari Center Building<br />
-                    Kimathi Street, Nairobi<br />
-                    Kenya
+                    Magson Plaza, 3rd Floor<br />
+                    Kisii, Kenya
                   </p>
                 </div>
               </div>
@@ -111,14 +118,20 @@ const Footer = () => {
               <div className="flex items-center gap-3">
                 <Phone className="h-5 w-5 text-accent" />
                 <div>
-                  <p className="text-primary-foreground/90">+254 700 123 456</p>
-                  <p className="text-primary-foreground/90">+254 722 789 012</p>
+                  <a href="tel:+254759190097" className="text-primary-foreground/90 hover:text-accent transition-colors">
+                    +254 759 190 097
+                  </a>
                 </div>
               </div>
               
               <div className="flex items-center gap-3">
                 <Mail className="h-5 w-5 text-accent" />
-                <p className="text-primary-foreground/90">info@olatours.co.ke</p>
+                <a 
+                  href="mailto:info@olatours.co.ke?subject=Tour%20Enquiry&body=Hello%2C%20I%20would%20like%20to%20know%20more%20about%20your%20tours."
+                  className="text-primary-foreground/90 hover:text-accent transition-colors"
+                >
+                  info@olatours.co.ke
+                </a>
               </div>
               
               <div className="flex items-start gap-3">
@@ -178,7 +191,7 @@ const Footer = () => {
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <div className="text-center md:text-left">
               <p className="text-primary-foreground/80 text-sm">
-                © {currentYear} Ola Tours Kenya. All rights reserved.
+                © {currentYear} Ola Tour and Travels. All rights reserved.
               </p>
               <p className="text-primary-foreground/60 text-xs mt-1">
                 Licensed Safari Tour Operator • Kenya Tourism Board Certified

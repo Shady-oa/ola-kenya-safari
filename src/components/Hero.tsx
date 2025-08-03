@@ -58,13 +58,17 @@ const Hero = () => {
 
           {/* Action Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
-            <Button className="btn-safari text-lg px-8 py-4 animate-pulse-safari">
-              <Calendar className="mr-2 h-5 w-5" />
-              Book Your Safari
+            <Button className="btn-safari text-lg px-8 py-4 animate-pulse-safari" asChild>
+              <a href="tel:+254759190097">
+                <Calendar className="mr-2 h-5 w-5" />
+                Call Now
+              </a>
             </Button>
-            <Button className="btn-ghost-safari text-lg px-8 py-4 text-white border-white/30 hover:bg-white/10">
-              <MapPin className="mr-2 h-5 w-5" />
-              Explore Destinations
+            <Button className="btn-ghost-safari text-lg px-8 py-4 text-white border-white/30 hover:bg-white/10" asChild>
+              <a href="https://wa.me/254759190097?text=Hello%20Ola%20Tour%20and%20Travels%2C%20I%20am%20interested%20in%20booking%20a%20tour." target="_blank" rel="noopener noreferrer">
+                <MapPin className="mr-2 h-5 w-5" />
+                WhatsApp Us
+              </a>
             </Button>
           </div>
 
