@@ -99,13 +99,21 @@ const BookingSection = () => {
 
             {/* Contact Options */}
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button className="btn-sunset">
-                <MessageCircle className="mr-2 h-5 w-5" />
-                WhatsApp Us
+              <Button className="btn-sunset" asChild>
+                <a 
+                  href="https://wa.me/254759190097?text=Hello%20Ola%20Tour%20and%20Travels%2C%20I%20would%20like%20to%20book%20a%20tour%20package."
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <MessageCircle className="mr-2 h-5 w-5" />
+                  WhatsApp Us
+                </a>
               </Button>
-              <Button variant="outline" className="btn-ghost-safari">
-                <Phone className="mr-2 h-5 w-5" />
-                Call +254 700 123 456
+              <Button variant="outline" className="btn-ghost-safari" asChild>
+                <a href="tel:+254759190097">
+                  <Phone className="mr-2 h-5 w-5" />
+                  Call +254 759 190 097
+                </a>
               </Button>
             </div>
           </div>

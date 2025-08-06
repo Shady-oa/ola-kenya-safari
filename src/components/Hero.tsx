@@ -65,7 +65,7 @@ const Hero = () => {
               </a>
             </Button>
             <Button className="btn-ghost-safari text-lg px-8 py-4 text-white border-white/30 hover:bg-white/10" asChild>
-              <a href="https://wa.me/254759190097?text=Hello%20Ola%20Tour%20and%20Travels%2C%20I%20am%20interested%20in%20booking%20a%20tour." target="_blank" rel="noopener noreferrer">
+              <a href="https://wa.me/254759190097?text=Hello%20Ola%20Tour%20and%20Travels%2C%20I%20would%20like%20to%20inquire%20about%20your%20tour%20packages." target="_blank" rel="noopener noreferrer">
                 <MapPin className="mr-2 h-5 w-5" />
                 WhatsApp Us
               </a>
@@ -94,25 +94,8 @@ const Hero = () => {
         </div>
       </div>
 
-      {/* Floating Testimonial */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-20">
-        <div className="bg-white/10 backdrop-blur-md rounded-xl p-6 max-w-md mx-auto border border-white/20">
-          <div className="flex justify-center mb-3">
-            {[...Array(testimonials[currentTestimonial].rating)].map((_, i) => (
-              <Star key={i} className="h-5 w-5 text-accent fill-current" />
-            ))}
-          </div>
-          <p className="text-white/90 text-center mb-3 italic">
-            "{testimonials[currentTestimonial].text}"
-          </p>
-          <p className="text-white/70 text-center text-sm">
-            - {testimonials[currentTestimonial].author}
-          </p>
-        </div>
-      </div>
-
       {/* Scroll Indicator */}
-      <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 z-10">
+      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-10">
         <div className="w-6 h-10 border-2 border-white/50 rounded-full flex justify-center">
           <div className="w-1 h-3 bg-white/70 rounded-full mt-2 animate-bounce" />
         </div>
